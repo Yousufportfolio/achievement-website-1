@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Journey</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Baloo 2', cursive;
+    background: linear-gradient(180deg, #020024, #090979, #00d4ff);
+    color: #eaf6ff;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+h1 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+}
+.subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto 50px;
+}
+.timeline {
+    position: relative;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #7dd3fc;
+    transform: translateX(-50%);
+}
+.event {
+    width: 46%;
+    background: rgba(255,255,255,0.12);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 40px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.7s ease;
+}
+.event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.event.left { left: 0; }
+.event.right { left: 54%; }
+.event::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 16px;
+    height: 16px;
+    background: #00d4ff;
+    border-radius: 50%;
+}
+.event.left::after { right: -36px; }
+.event.right::after { left: -36px; }
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>My Journey</h1>
+
+<div class="subtitle">
+I am a curious learner, problem solver, and creator. I enjoy robotics, public speaking, and innovation. This website documents my journey and achievements.
+</div>
+
+<div class="timeline">
+    <div class="event left">
+        <strong>2012</strong><br>
+        Born after 17 years of my parents’ marriage, as the only child in the family, a blessing that arrived with countless prayers and patience. From the very beginning, I was surrounded by love, care, and strong values instilled by my Mama and Baba. My upbringing focused not only on education, but also on character, discipline, and faith. This foundation shaped my confidence, sense of responsibility, and curiosity to learn and grow. It marked the start of a journey driven by purpose and perseverance.
+    </div>
+  <div class="event right">
+    <strong>2017–2018</strong><br>
+  Actively participated in various speech and public speaking programs held at Pearl Continental Hotel on international platforms. These programs were organized for prestigious forums, including PIFFA (Pakistan International Freight Forwarders Association). Through these experiences, I developed confidence in public communication, stage presence, and articulation of ideas. Speaking before diverse and professional audiences strengthened my leadership skills and clarity of expression. These events played a key role in shaping my personality at an early age.
+ </div>
+<div class="event left">
+  <strong>2019</strong><br>
+  Successfully completed Hifz-ul-Qur’an after years of consistent effort, patience, and discipline. This journey required daily commitment, self-control, and a deep connection with the Qur’an. Memorising the Book of Allah strengthened my character, time management, and spiritual awareness from a young age. It taught me perseverance during challenges and humility in success. This achievement remains one of the most defining and grounding experiences of my life.
+</div>
+<div class="event right">
+  <strong>2020</strong><br>
+  After completing Hifz-ul-Qur’an, this year focused on maintaining consistency, revision, and personal discipline. Alongside religious commitments, attention was given to academic development and self-improvement. Balancing studies with Qur’anic revision strengthened time management and mental focus. This period helped transition from achievement to responsibility, reinforcing lifelong habits of dedication and perseverance.
+</div>
+<div class="event left">
+  <strong>2022</strong><br>
+  Participated in the International School RoboRumble, gaining hands-on experience in robotics, problem-solving, and teamwork. The competition involved designing, programming, and testing robotic solutions under time constraints. Working collaboratively enhanced logical thinking and adaptability. This exposure marked an important step into competitive robotics and applied technology.
+</div>
+<div class="event right">
+  <strong>2023</strong><br>
+  Took part in the National Engineering and Robotics Competition (NERC), competing alongside skilled teams from various institutions. Although the team did not secure a winning position, the experience provided valuable lessons in resilience, technical refinement, and teamwork. Facing challenges in a competitive environment strengthened problem-solving abilities and determination. This participation contributed significantly to growth through experience rather than outcome.
+</div>
+<div class="event left">
+  <strong>2024</strong><br>
+  Participated in the World Robot Olympiad (WRO) Karachi regional competition, applying robotics and programming skills on an international-standard platform. The event emphasized innovation, accuracy, and teamwork under pressure. Competing at this level enhanced technical confidence and strategic thinking. It served as preparation for future international challenges.
+</div>
+<div class="event right">
+  <strong>2024</strong><br>
+  Represented at the World Robot Olympiad Final held in Izmir, Turkey, competing against international teams. Through focused preparation, teamwork, and perseverance, secured a Bronze position at the global level. This achievement reflected years of learning, practice, and continuous improvement in robotics and problem-solving. It remains a proud milestone on an international stage.
+</div>
+<div class="event left">
+  <strong>2025</strong><br>
+  In 2025, served as a Student Council Member (SCM) and FIDS Ambassador with the Design for Change global student leadership platform. As an SCM from Pakistan, this role involved representing the voices of young change-makers, contributing to global student dialogues, and engaging in workshops and discussions that fostered empathy and innovation. This responsibility strengthened communication, leadership, and collaboration skills by connecting with students and mentors from around the world. Participation included planning, sharing insights, and supporting initiatives that encouraged active student engagement in meaningful problem-solving. Being part of the Student Council marked a transition into global leadership and amplified the impact of youth-driven change.
+</div>
+<div class="event right">
+  <strong>2026</strong><br>
+  Participated in the RoboWonders Championship, engaging in advanced robotics challenges that tested creativity, technical accuracy, and teamwork. The competition provided exposure to complex problem-solving scenarios and innovative design approaches. Participation highlighted continued commitment to learning and growth in robotics and technology. This experience reflects an ongoing journey rather than a final destination.
+</div>
+  
+</div>
+
+<script>
+function animate() {
+    document.querySelectorAll('.event').forEach(e => {
+        if (e.getBoundingClientRect().top < window.innerHeight - 50) {
+            e.classList.add('visible');
+        }
+    });
+}
+window.addEventListener('scroll', animate);
+animate();
+</script>
+
+</body>
+</html>
